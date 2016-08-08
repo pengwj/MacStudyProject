@@ -11,6 +11,8 @@
 #import "AtObj.h"
 #import <Carbon/Carbon.h>
 
+#define WORD_BOUNDARY_CHARS [[NSCharacterSet alphanumericCharacterSet] invertedSet]
+
 @interface YWChatInputTextView()
 {
     BOOL isAtBack;
@@ -18,6 +20,9 @@
     NSMutableArray *_atObjArray;
     
 }
+
+@property (nonatomic, copy) NSString *substring;
+
 @end
 
 @implementation YWChatInputTextView
@@ -48,6 +53,8 @@
             _atUserListViewController = [[AtViewController alloc] initWithNibName:@"AtViewController" bundle:nil ];
         }
         _atPopover.contentViewController =_atUserListViewController;
+        NSArray *lists = @[@"完美",@"呀哈",@"世界1",@"不能和",@"苦涩娃娃",@"哦韩国高端个人的",@"啊哇哇",@"拉下",@"哦东西",@"可打折",@"阿卡",@"噶哈",@"破碎",@"发大概啊都是梵蒂冈",@"部分功能",@"爱发回国",@"哦拼命地燃烧"];
+        [_atUserListViewController refreshAtTableViewArray:lists];
     }
     return _atPopover;
 }
@@ -57,40 +64,48 @@
     
     _isAt = YES;
     isAtBack = NO;
-    _atUserListViewController.delegate = self;
-    
-    // Drawing code here.
 }
 
 -(void)keyDown:(NSEvent *)inEvent{
-    
-    NSLog(@"characters:%@",[inEvent characters]);
-    NSLog(@"location:%ld",self.selectedRange.location);
-    
+    BOOL shouldComplete = YES;
+    NSInteger row = _atUserListViewController.atTable.selectedRow;
     NSString *charactersIgnoringModifiers = [inEvent charactersIgnoringModifiers];
     unsigned short keyCode = [inEvent keyCode];
     
     if ([charactersIgnoringModifiers length]) {
-        unichar		 inChar = [charactersIgnoringModifiers characterAtIndex:0];
+//        unichar		 inChar = [charactersIgnoringModifiers characterAtIndex:0];
         NSUInteger flags = [inEvent modifierFlags];
         
-        if (inChar == NSEnterCharacter || inChar == NSCarriageReturnCharacter) {
-            //Make shift+enter work the same as option+enter
-            if (flags & NSShiftKeyMask) {
-                [super insertLineBreak:self];
+        if (keyCode == kVK_Return || keyCode == kVK_Tab) {
+            
+            if (self.atPopover.isShown) {
+                [self insert:self];
+                return; // Skip default behavior
             } else {
-                [super keyDown:inEvent];
+                
+                //Make shift+enter work the same as option+enter
+                if (flags & NSShiftKeyMask) {
+                    [super insertLineBreak:self];
+                } else {
+                    [super keyDown:inEvent];
+                }
+            
             }
             
-        } else if (inChar == NSDeleteCharacter){    // 选中textview时点击删除按钮
+        } else if (keyCode == kVK_Escape){
+            if (_atPopover.isShown) {
+                [_atPopover close];
+            }
+            return;
+        }
+        else if (keyCode == kVK_Delete){    // 选中textview时点击删除按钮
             [super deleteBackward:nil];
             
             if ([self.string hasSuffix:@"@"]) {
+                shouldComplete = NO;
                 [_atPopover close];
             } else {
-                
                 [self deleteAt:inEvent];
-                //   [super keyDown:inEvent];
             }
             
         } else if (keyCode == kVK_LeftArrow){
@@ -102,11 +117,35 @@
                 [super keyDown:inEvent];
             }
             
-        } else if (keyCode == kVK_UpArrow || keyCode == kVK_DownArrow || keyCode == kVK_RightArrow){
+        } else if  (keyCode == kVK_RightArrow){
             [super keyDown:inEvent];
             AtObj *obj = [self isInAtRange:_atObjArray location:self.selectedRange.location];
             if (obj) {
                 self.selectedRange = NSMakeRange(obj.range.location+obj.range.length, 0);
+            }
+        } else if (keyCode == kVK_UpArrow){
+            if (_atPopover.isShown) {
+                [self.atUserListViewController.atTable selectRowIndexes:[NSIndexSet indexSetWithIndex:row-1] byExtendingSelection:NO];
+                [self.atUserListViewController.atTable scrollRowToVisible:self.atUserListViewController.atTable.selectedRow];
+                return; // Skip default behavior
+            } else{
+                [super keyDown:inEvent];
+                AtObj *obj = [self isInAtRange:_atObjArray location:self.selectedRange.location];
+                if (obj) {
+                    self.selectedRange = NSMakeRange(obj.range.location+obj.range.length, 0);
+                }
+            }
+        } else if (keyCode == kVK_DownArrow){
+            if (_atPopover.isShown) {
+                [self.atUserListViewController.atTable selectRowIndexes:[NSIndexSet indexSetWithIndex:row+1] byExtendingSelection:NO];
+                [self.atUserListViewController.atTable scrollRowToVisible:self.atUserListViewController.atTable.selectedRow];
+                return; // Skip default behavior
+            } else{
+                [super keyDown:inEvent];
+                AtObj *obj = [self isInAtRange:_atObjArray location:self.selectedRange.location];
+                if (obj) {
+                    self.selectedRange = NSMakeRange(obj.range.location+obj.range.length, 0);
+                }
             }
         }
         else {
@@ -120,34 +159,73 @@
         [super keyDown:inEvent];
     }
     
-    if (_isAt &&  [[inEvent characters] isEqualToString:@"@"]) {
-//        NSLog(@"可以@出一个人");
-//        NSLog(@"selectedRange:%ld",self.selectedRange.location);
-//        
-//        NSInteger width = [self getRowWidth:[self.string substringToIndex:self.selectedRange.location] andFont:self.font andMaxWidth:MAXFLOAT andHeight:20];
-//        NSInteger popoverWidth = width%(NSInteger)(self.frame.size.width);
-//        NSInteger popoverHeight = width/(self.frame.size.width);
-//        [self.atPopover showRelativeToRect:NSMakeRect(popoverWidth, popoverHeight*20, 100, 1)
-//                                    ofView:self preferredEdge:NSRectEdgeMaxY];  // NSRectEdgeMinX:左 NSRectEdgeMinY:上 NSRectEdgeMaxX:右 NSRectEdgeMaxY:下
+
         
-        NSRange substringRange = NSMakeRange(self.selectedRange.location, 1);
-        NSRect rect = [self firstRectForCharacterRange:substringRange actualRange:NULL];
-        rect = [self.window convertRectFromScreen:rect];
-        rect = [self convertRect:rect fromView:nil];
-        NSString *firstChar = @"@";
-        NSSize firstCharSize = [firstChar sizeWithAttributes:@{NSFontAttributeName:self.font}];
-        rect.size.width = firstCharSize.width;
+        if (_isAt &&  [[inEvent characters] isEqualToString:@"@"]) {
+            
+            if (shouldComplete) {
+                
+                [self complete:self];
+            }
+        }
         
-        [self.atPopover showRelativeToRect:rect
-                                    ofView:self preferredEdge:NSRectEdgeMaxY];  // NSRectEdgeMinX:左 NSRectEdgeMinY:上 NSRectEdgeMaxX:右 NSRectEdgeMaxY:下
+        if([[inEvent characters] isEqualToString:@" "]){
+            _isAt= YES;
+        }else{
+            _isAt=NO;
+        }
+}
+
+- (void)insert:(id)sender {
+    if (self.atUserListViewController.atTable.selectedRow >= 0 && self.atUserListViewController.atTable.selectedRow < self.atUserListViewController.atArray.count) {
+        
+        NSString *string = [self.atUserListViewController.atArray objectAtIndex:self.atUserListViewController.atTable.selectedRow];
+//        NSInteger beginningOfWord = self.selectedRange.location - self.substring.length;
+//        NSRange range = NSMakeRange(beginningOfWord, self.substring.length);
+//        if ([self shouldChangeTextInRange:range replacementString:string]) {
+//            [self replaceCharactersInRange:range withString:string];
+//            [self didChangeText];
+//        }
+        
+        [self atViewAtUser:string];
+    }
+    [self.atPopover close];
+}
+
+- (void)complete:(id)sender{
+    NSInteger startOfWord = self.selectedRange.location;
+    for (NSInteger i = startOfWord - 1; i >= 0; i--) {
+        if ([WORD_BOUNDARY_CHARS characterIsMember:[self.string characterAtIndex:i]]) {
+            break;
+        } else {
+            startOfWord--;
+        }
     }
     
-    if([[inEvent characters] isEqualToString:@" "]){
-        _isAt= YES;
-    }else{
-        _isAt=NO;
+    NSInteger lengthOfWord = 0;
+    for (NSInteger i = startOfWord; i < self.string.length; i++) {
+        if ([WORD_BOUNDARY_CHARS characterIsMember:[self.string characterAtIndex:i]]) {
+            break;
+        } else {
+            lengthOfWord++;
+        }
     }
-
+    
+    self.substring = [self.string substringWithRange:NSMakeRange(startOfWord, lengthOfWord)];
+    
+    NSRange substringRange = NSMakeRange(self.selectedRange.location, 1);
+    NSRect rect = [self firstRectForCharacterRange:substringRange actualRange:NULL];
+    rect = [self.window convertRectFromScreen:rect];
+    rect = [self convertRect:rect fromView:nil];
+    NSString *firstChar = @"@";
+    NSSize firstCharSize = [firstChar sizeWithAttributes:@{NSFontAttributeName:self.font}];
+    rect.size.width = firstCharSize.width;
+    
+    [self.atPopover showRelativeToRect:rect
+                                ofView:self preferredEdge:NSRectEdgeMaxY];  // NSRectEdgeMinX:左 NSRectEdgeMinY:上 NSRectEdgeMaxX:右 NSRectEdgeMaxY:下
+    
+    
+    
 }
 
 - (void)insertText:(id)aString replacementRange:(NSRange)replacementRange
@@ -170,45 +248,7 @@
     }
 }
 
-#pragma mark - atView delegate
-- (void)atViewKeyDown:(NSEvent *)inEvent
-{
-    NSLog(@"characters_delegate:%@",[inEvent characters]);
-    
-    NSString *charactersIgnoringModifiers = [inEvent charactersIgnoringModifiers];
-    
-    if ([charactersIgnoringModifiers length]) {
-        unichar		 inChar = [charactersIgnoringModifiers characterAtIndex:0];
-        NSUInteger flags = [inEvent modifierFlags];
-        
-        if (inChar == NSEnterCharacter || inChar == NSCarriageReturnCharacter) {
-            //Make shift+enter work the same as option+enter
-            if (flags & NSShiftKeyMask) {
-                [super insertLineBreak:self];
-            } else {
-                [super keyDown:inEvent];
-            }
-            
-        } else {
-            [super keyDown:inEvent];
-        }
-        
-        if (inChar == NSDeleteCharacter) {
-            [super deleteBackward:nil];
-            
-            if (![self.string hasSuffix:@"@"]) {
-                [_atPopover close];
-            }
-            
-        } else {
-            [super keyDown:inEvent];
-        }
-        
-    } else {
-        [super keyDown:inEvent];
-    }
-}
-
+#pragma mark - atView
 - (void)atViewAtUser:(NSString *)user
 {
     if ([[self.string substringToIndex:self.selectedRange.location] hasSuffix:@"@"]) {
@@ -296,6 +336,22 @@
     [_atObjArray removeAllObjects];
     [_atObjArray addObjectsFromArray:tempArray];
     
+}
+
+- (void)configAtTableArray:(NSArray *)listArray
+{
+    if (_atUserListViewController) {
+        [_atUserListViewController refreshAtTableViewArray:listArray];
+    }
+}
+
+- (NSArray *)selectArrayWithString:(NSString *)string
+{
+    NSMutableArray *muArray = [NSMutableArray arrayWithCapacity:0];
+    for (AtObj *temp in _atObjArray) {
+        [muArray addObject:temp.user];
+    }
+    return muArray;
 }
 
 ////获取文字宽度

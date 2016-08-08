@@ -8,18 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol atViewDelegate <NSObject>
-
-- (void)atViewKeyDown:(NSEvent *)inEvent;
-- (void)atViewAtUser:(NSString *)user;
-
-@end
+//@protocol atViewDelegate <NSObject>
+//
+//- (void)atViewKeyDown:(NSEvent *)inEvent;
+//- (void)atViewAtUser:(NSString *)user;
+//
+//@end
 
 @interface AtViewController : NSViewController
 
 @property (weak) IBOutlet NSTableView *atTable;
-@property (nonatomic, assign) id<atViewDelegate> delegate;
+@property (nonatomic, strong) NSMutableArray *atArray;
+//@property (nonatomic, assign) id<atViewDelegate> delegate;
 
 + (AtViewController *)shareInsdtance;
+
+- (void)refreshAtTableViewArray:(NSArray *)array;
 
 @end

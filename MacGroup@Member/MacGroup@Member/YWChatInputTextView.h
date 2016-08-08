@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "AtViewController.h"
 
-@interface YWChatInputTextView : NSTextView<NSTextViewDelegate,atViewDelegate>
+@interface YWChatInputTextView : NSTextView<NSTextViewDelegate>
 
 /*
  BOOL isAt;
@@ -20,5 +20,7 @@
 @property (nonatomic, assign) BOOL isAt;
 @property (nonatomic, strong) NSPopover *atPopover;
 @property (nonatomic, strong) AtViewController *atUserListViewController;
+
+- (void)configAtTableArray:(NSArray *)listArray;
 
 @end
