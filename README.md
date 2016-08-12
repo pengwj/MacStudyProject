@@ -4,3 +4,6 @@
 
 ####1、MacGroup@Member
 ######该demo是用来实现群组聊天中的@功能
+
+####2、Mac_NSTextView(NSScrollView)
+######该demo是用来手写NSTextView（放在NSScrollView中），这么写是因为在封装cell中，用Masonry布局时，提示NSTextView为弱引用，后来发现需要把它放在NSScrollView中才能引用

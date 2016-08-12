@@ -19,6 +19,7 @@
     
     NSMutableArray *_atObjArray;
     
+    NSInteger _lastAtLocation;  // 最后一次@的位置，默认为－1
 }
 
 @property (nonatomic, copy) NSString *substring;
@@ -39,6 +40,7 @@
 - (void)awakeFromNib
 {
     _atObjArray = [NSMutableArray arrayWithCapacity:0];
+    _lastAtLocation = -1;
 }
 
 - (NSPopover*)atPopover
@@ -55,6 +57,8 @@
         _atPopover.contentViewController =_atUserListViewController;
         NSArray *lists = @[@"完美",@"呀哈",@"世界1",@"不能和",@"苦涩娃娃",@"哦韩国高端个人的",@"啊哇哇",@"拉下",@"哦东西",@"可打折",@"阿卡",@"噶哈",@"破碎",@"发大概啊都是梵蒂冈",@"部分功能",@"爱发回国",@"哦拼命地燃烧"];
         [_atUserListViewController refreshAtTableViewArray:lists];
+        
+        _isAt = YES;
     }
     return _atPopover;
 }
@@ -62,7 +66,7 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    _isAt = YES;
+    _isAt = NO;
     isAtBack = NO;
 }
 
@@ -94,16 +98,22 @@
             
         } else if (keyCode == kVK_Escape){
             if (_atPopover.isShown) {
-                [_atPopover close];
+                [self closeAtPopover];
             }
             return;
         }
         else if (keyCode == kVK_Delete){    // 选中textview时点击删除按钮
+            
+            if ([[self.string substringFromIndex:self.selectedRange.location-1] isEqualToString:@"@"]) {
+                _lastAtLocation = -1;
+            }
+            
             [super deleteBackward:nil];
             
-            if ([self.string hasSuffix:@"@"]) {
+            if ([self.string hasSuffix:@" "] || [self.string isEqualToString:@""]) {
                 shouldComplete = NO;
-                [_atPopover close];
+                [self closeAtPopover];
+                
             } else {
                 [self deleteAt:inEvent];
             }
@@ -158,22 +168,36 @@
         
         [super keyDown:inEvent];
     }
-    
 
+//        if (_isAt &&  [[inEvent characters] isEqualToString:@"@"]) {
+    
+    
+    if ([self isCouldShowComplete]) {
         
-        if (_isAt &&  [[inEvent characters] isEqualToString:@"@"]) {
-            
-            if (shouldComplete) {
-                
-                [self complete:self];
-            }
-        }
-        
-        if([[inEvent characters] isEqualToString:@" "]){
-            _isAt= YES;
-        }else{
-            _isAt=NO;
-        }
+            [self complete:self];
+    }
+//        }
+    
+}
+
+- (BOOL)isCouldShowComplete
+{
+    if ([self.string isEqualToString:@""]) {
+        return NO;
+    }
+    
+    if ([[self.string substringToIndex:self.selectedRange.location] hasSuffix:@"@"]) {
+        return YES;
+    }
+    
+    AtObj *obj = [self isInAtRange:_atObjArray location:_lastAtLocation];
+    if (obj) {
+        return NO;
+    } else if (_lastAtLocation == -1) {
+        return NO;
+    } else{
+        return YES;
+    }
 }
 
 - (void)insert:(id)sender {
@@ -189,7 +213,8 @@
         
         [self atViewAtUser:string];
     }
-    [self.atPopover close];
+    
+    [self closeAtPopover];
 }
 
 - (void)complete:(id)sender{
@@ -211,21 +236,19 @@
         }
     }
     
+    [self atPopover];
+    
+    _lastAtLocation = startOfWord;
+    NSLog(@"_lastAtLocation:%ld",_lastAtLocation);
     self.substring = [self.string substringWithRange:NSMakeRange(startOfWord, lengthOfWord)];
     
-    NSRange substringRange = NSMakeRange(self.selectedRange.location, 1);
-    NSRect rect = [self firstRectForCharacterRange:substringRange actualRange:NULL];
-    rect = [self.window convertRectFromScreen:rect];
-    rect = [self convertRect:rect fromView:nil];
-    NSString *firstChar = @"@";
-    NSSize firstCharSize = [firstChar sizeWithAttributes:@{NSFontAttributeName:self.font}];
-    rect.size.width = firstCharSize.width;
-    
-    [self.atPopover showRelativeToRect:rect
-                                ofView:self preferredEdge:NSRectEdgeMaxY];  // NSRectEdgeMinX:左 NSRectEdgeMinY:上 NSRectEdgeMaxX:右 NSRectEdgeMaxY:下
-    
-    
-    
+    NSLog(@"substring:%@",_substring);
+    NSArray *listArray = [self selectArrayWithString:_substring];
+    if (listArray.count>0) {
+        [self configAtTableArray:listArray];
+    } else {
+        [self closeAtPopover];
+    }
 }
 
 - (void)insertText:(id)aString replacementRange:(NSRange)replacementRange
@@ -235,8 +258,31 @@
     NSString *oldString = self.string;
     [super insertText:aString replacementRange:replacementRange];
     NSString *newString = self.string;
+    
+    NSLog(@"oldString:%@,newString:%@",oldString,newString);
+    
     NSInteger insertLength = newString.length-(oldString.length-aStringLength);
+    
+    if (_lastAtLocation>self.selectedRange.location) {
+        _lastAtLocation = _lastAtLocation + insertLength;
+    }
+    
+    NSLog(@"_lastAtLocation:%ld",_lastAtLocation);
+    
     [self changeAtArrayLocation:self.selectedRange.location-insertLength length:insertLength isAdd:YES];
+    
+    if ([[self.string substringToIndex:self.selectedRange.location] hasSuffix:@"@"]) {
+        NSRange substringRange = NSMakeRange(self.selectedRange.location, 1);
+        NSRect rect = [self firstRectForCharacterRange:substringRange actualRange:NULL];
+        rect = [self.window convertRectFromScreen:rect];
+        rect = [self convertRect:rect fromView:nil];
+        NSString *firstChar = @"@";
+        NSSize firstCharSize = [firstChar sizeWithAttributes:@{NSFontAttributeName:self.font}];
+        rect.size.width = firstCharSize.width;
+        _lastAtLocation = self.selectedRange.location;
+        [self.atPopover showRelativeToRect:rect
+                                    ofView:self preferredEdge:NSRectEdgeMaxY];  // NSRectEdgeMinX:左 NSRectEdgeMinY:上 NSRectEdgeMaxX:右 NSRectEdgeMaxY:下
+    }
 }
 
 - (void)mouseDown:(NSEvent *)theEvent
@@ -268,7 +314,7 @@
     [str removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0, str.length)];
     [str addAttributes:blueDic range:NSMakeRange(0, str.length-1)];
     [self insertText:str replacementRange:NSMakeRange(self.selectedRange.location, 0)];
-    [self.atPopover close];
+    [self closeAtPopover];
     
     [self changeAtArrayLocation:at.range.location length:user.length isAdd:YES];
     
@@ -298,10 +344,15 @@
         [self replaceCharactersInRange:NSMakeRange(obj.range.location, obj.range.length-1) withString:@""];
         
         [_atObjArray removeObject:obj];
+        _isAt = NO;
     }
     else
     {
         [self changeAtArrayLocation:self.selectedRange.location length:1 isAdd:NO];
+    }
+    
+    if (!_isAt) {
+        [self closeAtPopover];
     }
 }
 
@@ -347,18 +398,18 @@
 
 - (NSArray *)selectArrayWithString:(NSString *)string
 {
-    NSMutableArray *muArray = [NSMutableArray arrayWithCapacity:0];
-    for (AtObj *temp in _atObjArray) {
-        [muArray addObject:temp.user];
-    }
+    NSMutableArray *muArray = [NSMutableArray arrayWithArray:_atUserListViewController.atArray];
+//    for (AtObj *temp in _atObjArray) {
+//        [muArray addObject:temp.user];
+//    }
     return muArray;
 }
 
-////获取文字宽度
-//-(CGFloat)getRowWidth:(NSString *)text andFont:(NSFont *)font andMaxWidth:(CGFloat)maxMidth andHeight:(CGFloat)height{
-//    
-//    CGRect rect = [text boundingRectWithSize:CGSizeMake(maxMidth, height) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName] context:Nil];
-//    return rect.size.width;
-//}
+- (void)closeAtPopover
+{
+    [_atPopover close];
+    _lastAtLocation = -1;
+    _isAt = NO;
+}
 
 @end
