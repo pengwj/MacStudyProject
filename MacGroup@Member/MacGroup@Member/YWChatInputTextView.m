@@ -160,7 +160,7 @@
             }
         }
         else {
-
+        
             [super keyDown:inEvent];
             
         }
@@ -172,26 +172,6 @@
     
     [self showAtPopover];
 }
-
-//- (BOOL)isCouldShowComplete
-//{
-//    if ([self.string isEqualToString:@""]) {
-//        return NO;
-//    }
-//    
-//    if ([[self.string substringToIndex:self.selectedRange.location] hasSuffix:@"@"]) {
-//        return YES;
-//    }
-//    
-//    AtObj *obj = [self isInAtRange:_atObjArray location:_lastAtLocation];
-//    if (obj) {
-//        return NO;
-//    } else if (_lastAtLocation == -1) {
-//        return NO;
-//    } else{
-//        return YES;
-//    }
-//}
 
 - (void)insert:(id)sender {
     if (self.atUserListViewController.atTable.selectedRow >= 0 && self.atUserListViewController.atTable.selectedRow < self.atUserListViewController.atArray.count) {
@@ -219,7 +199,12 @@
     }
     
     NSLog(@"lengthOfWord:%ld",lengthOfWord);
-    self.substring = [self.string substringWithRange:NSMakeRange(_lastAtLocation, lengthOfWord)];
+    
+//    if (_lastAtLocation + lengthOfWord < self.string.length) {
+        self.substring = [self.string substringWithRange:NSMakeRange(_lastAtLocation, lengthOfWord)];
+//    } else {
+//        self.substring = @"";
+//    }
     
     NSArray *listArray = [self selectArrayWithString:_substring];
     if (listArray.count>0) {
@@ -235,7 +220,19 @@
     // aStringLength为输入框输入时显示的文字，但并不是最终插入输入框的文字
     NSInteger aStringLength = [(NSString *)aString length];
     NSString *oldString = self.string;
+    
+    if (!isAtBack) {
+        NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:aString];
+        NSDictionary *blackDic = [NSDictionary dictionaryWithObject:[NSColor blackColor] forKey:NSForegroundColorAttributeName];
+        [str removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0, str.length)];
+        [str addAttributes:blackDic range:NSMakeRange(0, str.length)];
+    } else {
+        isAtBack = NO;
+    }
+    
     [super insertText:aString replacementRange:replacementRange];
+
+    
     NSString *newString = self.string;
     
     NSInteger insertLength = newString.length-(oldString.length-aStringLength);
@@ -293,6 +290,11 @@
     }
 }
 
+- (void)textDidChange:(NSNotification *)notification
+{
+    
+}
+
 #pragma mark - atView
 - (void)atViewAtUser:(NSString *)user
 {
@@ -318,7 +320,9 @@
     
     NSLog(@"substring_at:%@",self.substring);
     
+    isAtBack = YES;
     [self insertText:str replacementRange:NSMakeRange(_lastAtLocation, self.substring.length)];
+    _lastAtLocation = -1;
     [_atPopover close];
     
     [_atObjArray addObject:at];
@@ -349,7 +353,7 @@
         
         NSLog(@"_lastAtLocation_1:%ld",_lastAtLocation);
         
-        if (obj.range.location+obj.range.length<_lastAtLocation) {
+        if (obj.range.location+obj.range.length<_lastAtLocation && _lastAtLocation != -1) {
             _lastAtLocation -= obj.range.length;
         }
         
@@ -360,7 +364,7 @@
         NSLog(@"_lastAtLocation_3:%ld",_lastAtLocation);
         
         NSLog(@"selectedRange:%ld,_lastAtLocation_1:%ld",self.selectedRange.location,_lastAtLocation);
-        if ((NSInteger)self.selectedRange.location<_lastAtLocation) {
+        if ((NSInteger)self.selectedRange.location<_lastAtLocation && _lastAtLocation != -1) {
             NSLog(@"selectedRange:%ld,_lastAtLocation_3:%ld",self.selectedRange.location,_lastAtLocation);
 
             _lastAtLocation -= 1;
