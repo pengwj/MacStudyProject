@@ -17,7 +17,6 @@
  AtViewController *_atUserListViewController;
  */
 
-@property (nonatomic, assign) BOOL isAt;
 @property (nonatomic, strong) NSPopover *atPopover;
 @property (nonatomic, strong) AtViewController *atUserListViewController;
 
