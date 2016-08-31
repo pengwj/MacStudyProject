@@ -9,10 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 #import "AutolayoutImageView.h"
+#import "AutoGroupCellImageView.h"
+#import "AutoReminderView.h"
 
 @interface ViewController : NSViewController
 
 @property (nonatomic, strong) AutolayoutImageView *autoLayoutImageView;
+@property (nonatomic, strong) AutoGroupCellImageView *autoGroupCellImageView;
+@property (nonatomic, strong) AutoReminderView *autoReminderView;
 
 @end
 

@@ -15,41 +15,6 @@ colorWithRed:r/255.0 \
 green:g/255.0 \
 blue:b/255.0 alpha:a]
 
-@implementation TapedImageView
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-        NSClickGestureRecognizer *click = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(taped)];
-        click.numberOfClicksRequired = 1;
-        [self addGestureRecognizer:click];
-    }
-    return self;
-}
-- (void)longTouched
-{
-    if(self.longTouchBlock){
-        self.longTouchBlock(self.tag);
-    }
-}
-- (void)taped
-{
-    if (self.tapedBlock) {
-        self.tapedBlock(self.tag);
-    }
-}
-
-@end
 
 
 @interface AutolayoutImageView ()
@@ -120,12 +85,12 @@ blue:b/255.0 alpha:a]
             [weakSelf tapedImage:weakSelf.images atIndex:index];
         };
         
-        //最后一个
-        if (i == _images.count - 1) {
-            self.height = imageView.bottom + _contentEdgeInset.bottom;
+//        //最后一个
+//        if (i == _images.count - 1) {
+//            self.height = imageView.bottom + _contentEdgeInset.bottom;
 //            [self setNeedsDisplay];
 //            [self layoutSubtreeIfNeeded];
-        }
+//        }
     }
 }
 
@@ -226,5 +191,9 @@ blue:b/255.0 alpha:a]
     }
 }
 
+- (BOOL)isFlipped
+{
+    return YES;
+}
 
 @end

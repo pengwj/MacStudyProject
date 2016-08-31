@@ -55,19 +55,25 @@
         int line = i/self.numberOfLine ;
         int col = i%self.numberOfLine ;
         
-        NSImageView *avatar = [[NSImageView alloc]initWithFrame:CGRectMake(self.contentEdgeInset.left + col*(self.itemSize.width + self.colSpace), self.contentEdgeInset.top + line*(self.lineSpace + self.itemSize.height), self.itemSize.height, self.itemSize.width)];
+        TapedImageView *avatar = [[TapedImageView alloc]initWithFrame:CGRectMake(self.contentEdgeInset.left + col*(self.itemSize.width + self.colSpace), self.contentEdgeInset.top + line*(self.lineSpace + self.itemSize.height), self.itemSize.height, self.itemSize.width)];
         avatar.tag = i;
 //        [avatar setRoundCorner:YES];
 //        AppUser *user = _images[i];
 //        [avatar loadImage:user.portrait placeHolder:nil downloadFlag:avatar.tag];
 //        [avatar clickMe:self tap:@selector(avatarClicked:) doubleTap:nil];
         
-        [self addSubview:avatar];
+//        NSClickGestureRecognizer *click = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(avatarClicked:)];
+//        click.numberOfClicksRequired = 1;
+//        [self addGestureRecognizer:click];
         
+        avatar.imageScaling = NSImageScaleAxesIndependently;
+        avatar.image = [_images objectAtIndex:i];
+        [self addSubview:avatar];
+    
         if (i == _images.count - 1) {
             self.height = avatar.bottom + self.contentEdgeInset.bottom;
 //            [self setNeedsDisplay];
-            [self layoutSubtreeIfNeeded];
+//            [self layoutSubtreeIfNeeded];
         }
     }
 }

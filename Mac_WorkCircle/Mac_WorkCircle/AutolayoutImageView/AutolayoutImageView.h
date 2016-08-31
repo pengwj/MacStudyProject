@@ -7,17 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NSView+AutoCategory.h"
-
-typedef void(^tapedImageBlock)(NSUInteger index);
-typedef void(^longTouchImageBlock)(NSUInteger index);
-
-@interface TapedImageView : NSImageView <NSGestureRecognizerDelegate>
-
-@property (nonatomic, copy) tapedImageBlock tapedBlock;
-@property (nonatomic, copy) longTouchImageBlock longTouchBlock;
-
-@end
+#import "TapedImageView.h"
 
 //点中的图片block
 typedef void(^autoLayoutImageBlock)(NSArray *images , NSUInteger index);

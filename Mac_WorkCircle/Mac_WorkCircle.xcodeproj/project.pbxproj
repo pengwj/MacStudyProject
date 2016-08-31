@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A118578A1D7528AC001D0BC7 /* NSView+AutoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A11857891D7528AC001D0BC7 /* NSView+AutoCategory.m */; };
+		A11083411D76AFCB009A7D97 /* Left Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A110833F1D76AFCB009A7D97 /* Left Filled-50.png */; };
+		A11083421D76AFCB009A7D97 /* Right Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A11083401D76AFCB009A7D97 /* Right Filled-50.png */; };
+		A110834B1D76B6F5009A7D97 /* WCPictureShowWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A11083491D76B6F5009A7D97 /* WCPictureShowWindowController.m */; };
+		A110834C1D76B6F5009A7D97 /* WCPictureShowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A110834A1D76B6F5009A7D97 /* WCPictureShowWindowController.xib */; };
 		A11857951D75390C001D0BC7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A118578C1D75390C001D0BC7 /* 1.jpg */; };
 		A11857961D75390C001D0BC7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A118578D1D75390C001D0BC7 /* 2.jpg */; };
 		A11857971D75390C001D0BC7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A118578E1D75390C001D0BC7 /* 3.jpg */; };
@@ -17,6 +20,12 @@
 		A118579B1D75390C001D0BC7 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A11857921D75390C001D0BC7 /* 7.jpg */; };
 		A118579C1D75390C001D0BC7 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A11857931D75390C001D0BC7 /* 8.jpg */; };
 		A118579D1D75390C001D0BC7 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A11857941D75390C001D0BC7 /* 9.jpg */; };
+		A11857AB1D758A68001D0BC7 /* 加载中图片图标.png in Resources */ = {isa = PBXBuildFile; fileRef = A11857AA1D758A68001D0BC7 /* 加载中图片图标.png */; };
+		A11857BA1D759F04001D0BC7 /* AutoGroupCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A11857B11D759F04001D0BC7 /* AutoGroupCellImageView.m */; };
+		A11857BB1D759F04001D0BC7 /* AutolayoutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A11857B31D759F04001D0BC7 /* AutolayoutImageView.m */; };
+		A11857BC1D759F04001D0BC7 /* AutoReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A11857B51D759F04001D0BC7 /* AutoReminderView.m */; };
+		A11857BD1D759F04001D0BC7 /* NSView+AutoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A11857B71D759F04001D0BC7 /* NSView+AutoCategory.m */; };
+		A11857BE1D759F04001D0BC7 /* TapedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A11857B91D759F04001D0BC7 /* TapedImageView.m */; };
 		A147A9C01D73DF2900189D38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9BF1D73DF2900189D38 /* AppDelegate.m */; };
 		A147A9C31D73DF2900189D38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9C21D73DF2900189D38 /* main.m */; };
 		A147A9C61D73DF2900189D38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9C51D73DF2900189D38 /* ViewController.m */; };
@@ -24,14 +33,14 @@
 		A147A9CB1D73DF2900189D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A147A9C91D73DF2900189D38 /* Main.storyboard */; };
 		A147A9E31D7427C900189D38 /* WorkCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9E21D7427C900189D38 /* WorkCircleCell.m */; };
 		A147A9E61D742AE500189D38 /* YWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9E51D742AE500189D38 /* YWTextView.m */; };
-		A147A9E91D7439D000189D38 /* AutolayoutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9E81D7439D000189D38 /* AutolayoutImageView.m */; };
-		A147A9EC1D7439EC00189D38 /* AutoReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9EB1D7439EC00189D38 /* AutoReminderView.m */; };
-		A147A9EF1D743AC700189D38 /* AutoGroupCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9EE1D743AC700189D38 /* AutoGroupCellImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A11857881D7528AC001D0BC7 /* NSView+AutoCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+AutoCategory.h"; sourceTree = "<group>"; };
-		A11857891D7528AC001D0BC7 /* NSView+AutoCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+AutoCategory.m"; sourceTree = "<group>"; };
+		A110833F1D76AFCB009A7D97 /* Left Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Left Filled-50.png"; sourceTree = "<group>"; };
+		A11083401D76AFCB009A7D97 /* Right Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Right Filled-50.png"; sourceTree = "<group>"; };
+		A11083481D76B6F5009A7D97 /* WCPictureShowWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPictureShowWindowController.h; sourceTree = "<group>"; };
+		A11083491D76B6F5009A7D97 /* WCPictureShowWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCPictureShowWindowController.m; sourceTree = "<group>"; };
+		A110834A1D76B6F5009A7D97 /* WCPictureShowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCPictureShowWindowController.xib; sourceTree = "<group>"; };
 		A118578C1D75390C001D0BC7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		A118578D1D75390C001D0BC7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		A118578E1D75390C001D0BC7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
@@ -41,6 +50,17 @@
 		A11857921D75390C001D0BC7 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		A11857931D75390C001D0BC7 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		A11857941D75390C001D0BC7 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		A11857AA1D758A68001D0BC7 /* 加载中图片图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加载中图片图标.png"; sourceTree = "<group>"; };
+		A11857B01D759F04001D0BC7 /* AutoGroupCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoGroupCellImageView.h; sourceTree = "<group>"; };
+		A11857B11D759F04001D0BC7 /* AutoGroupCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoGroupCellImageView.m; sourceTree = "<group>"; };
+		A11857B21D759F04001D0BC7 /* AutolayoutImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutolayoutImageView.h; sourceTree = "<group>"; };
+		A11857B31D759F04001D0BC7 /* AutolayoutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutolayoutImageView.m; sourceTree = "<group>"; };
+		A11857B41D759F04001D0BC7 /* AutoReminderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoReminderView.h; sourceTree = "<group>"; };
+		A11857B51D759F04001D0BC7 /* AutoReminderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoReminderView.m; sourceTree = "<group>"; };
+		A11857B61D759F04001D0BC7 /* NSView+AutoCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+AutoCategory.h"; sourceTree = "<group>"; };
+		A11857B71D759F04001D0BC7 /* NSView+AutoCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+AutoCategory.m"; sourceTree = "<group>"; };
+		A11857B81D759F04001D0BC7 /* TapedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapedImageView.h; sourceTree = "<group>"; };
+		A11857B91D759F04001D0BC7 /* TapedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapedImageView.m; sourceTree = "<group>"; };
 		A147A9BB1D73DF2900189D38 /* Mac_WorkCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mac_WorkCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A147A9BE1D73DF2900189D38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A147A9BF1D73DF2900189D38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,12 +74,6 @@
 		A147A9E21D7427C900189D38 /* WorkCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkCircleCell.m; sourceTree = "<group>"; };
 		A147A9E41D742AE500189D38 /* YWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWTextView.h; sourceTree = "<group>"; };
 		A147A9E51D742AE500189D38 /* YWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWTextView.m; sourceTree = "<group>"; };
-		A147A9E71D7439D000189D38 /* AutolayoutImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutolayoutImageView.h; sourceTree = "<group>"; };
-		A147A9E81D7439D000189D38 /* AutolayoutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutolayoutImageView.m; sourceTree = "<group>"; };
-		A147A9EA1D7439EC00189D38 /* AutoReminderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoReminderView.h; sourceTree = "<group>"; };
-		A147A9EB1D7439EC00189D38 /* AutoReminderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoReminderView.m; sourceTree = "<group>"; };
-		A147A9ED1D743AC700189D38 /* AutoGroupCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoGroupCellImageView.h; sourceTree = "<group>"; };
-		A147A9EE1D743AC700189D38 /* AutoGroupCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoGroupCellImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,9 @@
 		A118578B1D75390C001D0BC7 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				A110833F1D76AFCB009A7D97 /* Left Filled-50.png */,
+				A11083401D76AFCB009A7D97 /* Right Filled-50.png */,
+				A11857AA1D758A68001D0BC7 /* 加载中图片图标.png */,
 				A118578C1D75390C001D0BC7 /* 1.jpg */,
 				A118578D1D75390C001D0BC7 /* 2.jpg */,
 				A118578E1D75390C001D0BC7 /* 3.jpg */,
@@ -87,6 +104,33 @@
 				A11857941D75390C001D0BC7 /* 9.jpg */,
 			);
 			path = "图片";
+			sourceTree = "<group>";
+		};
+		A11857AF1D759EEF001D0BC7 /* AutolayoutImageView */ = {
+			isa = PBXGroup;
+			children = (
+				A11857B01D759F04001D0BC7 /* AutoGroupCellImageView.h */,
+				A11857B11D759F04001D0BC7 /* AutoGroupCellImageView.m */,
+				A11857B21D759F04001D0BC7 /* AutolayoutImageView.h */,
+				A11857B31D759F04001D0BC7 /* AutolayoutImageView.m */,
+				A11857B41D759F04001D0BC7 /* AutoReminderView.h */,
+				A11857B51D759F04001D0BC7 /* AutoReminderView.m */,
+				A11857B61D759F04001D0BC7 /* NSView+AutoCategory.h */,
+				A11857B71D759F04001D0BC7 /* NSView+AutoCategory.m */,
+				A11857B81D759F04001D0BC7 /* TapedImageView.h */,
+				A11857B91D759F04001D0BC7 /* TapedImageView.m */,
+			);
+			path = AutolayoutImageView;
+			sourceTree = "<group>";
+		};
+		A11857BF1D759F2A001D0BC7 /* PictureCycle */ = {
+			isa = PBXGroup;
+			children = (
+				A11083481D76B6F5009A7D97 /* WCPictureShowWindowController.h */,
+				A11083491D76B6F5009A7D97 /* WCPictureShowWindowController.m */,
+				A110834A1D76B6F5009A7D97 /* WCPictureShowWindowController.xib */,
+			);
+			path = PictureCycle;
 			sourceTree = "<group>";
 		};
 		A147A9B21D73DF2900189D38 = {
@@ -117,14 +161,8 @@
 				A147A9E21D7427C900189D38 /* WorkCircleCell.m */,
 				A147A9E41D742AE500189D38 /* YWTextView.h */,
 				A147A9E51D742AE500189D38 /* YWTextView.m */,
-				A11857881D7528AC001D0BC7 /* NSView+AutoCategory.h */,
-				A11857891D7528AC001D0BC7 /* NSView+AutoCategory.m */,
-				A147A9E71D7439D000189D38 /* AutolayoutImageView.h */,
-				A147A9E81D7439D000189D38 /* AutolayoutImageView.m */,
-				A147A9EA1D7439EC00189D38 /* AutoReminderView.h */,
-				A147A9EB1D7439EC00189D38 /* AutoReminderView.m */,
-				A147A9ED1D743AC700189D38 /* AutoGroupCellImageView.h */,
-				A147A9EE1D743AC700189D38 /* AutoGroupCellImageView.m */,
+				A11857BF1D759F2A001D0BC7 /* PictureCycle */,
+				A11857AF1D759EEF001D0BC7 /* AutolayoutImageView */,
 				A147A9C71D73DF2900189D38 /* Assets.xcassets */,
 				A147A9C91D73DF2900189D38 /* Main.storyboard */,
 				A147A9CC1D73DF2900189D38 /* Info.plist */,
@@ -198,12 +236,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11083421D76AFCB009A7D97 /* Right Filled-50.png in Resources */,
 				A118579D1D75390C001D0BC7 /* 9.jpg in Resources */,
 				A118579C1D75390C001D0BC7 /* 8.jpg in Resources */,
 				A11857981D75390C001D0BC7 /* 4.jpg in Resources */,
+				A110834C1D76B6F5009A7D97 /* WCPictureShowWindowController.xib in Resources */,
 				A11857971D75390C001D0BC7 /* 3.jpg in Resources */,
 				A118579A1D75390C001D0BC7 /* 6.jpg in Resources */,
 				A11857951D75390C001D0BC7 /* 1.jpg in Resources */,
+				A11083411D76AFCB009A7D97 /* Left Filled-50.png in Resources */,
+				A11857AB1D758A68001D0BC7 /* 加载中图片图标.png in Resources */,
 				A147A9C81D73DF2900189D38 /* Assets.xcassets in Resources */,
 				A11857991D75390C001D0BC7 /* 5.jpg in Resources */,
 				A118579B1D75390C001D0BC7 /* 7.jpg in Resources */,
@@ -220,14 +262,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A147A9E31D7427C900189D38 /* WorkCircleCell.m in Sources */,
-				A147A9EC1D7439EC00189D38 /* AutoReminderView.m in Sources */,
-				A118578A1D7528AC001D0BC7 /* NSView+AutoCategory.m in Sources */,
 				A147A9C61D73DF2900189D38 /* ViewController.m in Sources */,
-				A147A9E91D7439D000189D38 /* AutolayoutImageView.m in Sources */,
+				A11857BB1D759F04001D0BC7 /* AutolayoutImageView.m in Sources */,
 				A147A9C31D73DF2900189D38 /* main.m in Sources */,
-				A147A9EF1D743AC700189D38 /* AutoGroupCellImageView.m in Sources */,
+				A110834B1D76B6F5009A7D97 /* WCPictureShowWindowController.m in Sources */,
 				A147A9C01D73DF2900189D38 /* AppDelegate.m in Sources */,
+				A11857BE1D759F04001D0BC7 /* TapedImageView.m in Sources */,
 				A147A9E61D742AE500189D38 /* YWTextView.m in Sources */,
+				A11857BA1D759F04001D0BC7 /* AutoGroupCellImageView.m in Sources */,
+				A11857BD1D759F04001D0BC7 /* NSView+AutoCategory.m in Sources */,
+				A11857BC1D759F04001D0BC7 /* AutoReminderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
