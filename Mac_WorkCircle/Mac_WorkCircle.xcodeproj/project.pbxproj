@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012CDB0E87D91CB3EB4240FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95E7D8A621E893B777C9AB /* libPods.a */; };
 		A11083411D76AFCB009A7D97 /* Left Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A110833F1D76AFCB009A7D97 /* Left Filled-50.png */; };
 		A11083421D76AFCB009A7D97 /* Right Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A11083401D76AFCB009A7D97 /* Right Filled-50.png */; };
 		A110834B1D76B6F5009A7D97 /* WCPictureShowWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A11083491D76B6F5009A7D97 /* WCPictureShowWindowController.m */; };
@@ -33,9 +34,13 @@
 		A147A9CB1D73DF2900189D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A147A9C91D73DF2900189D38 /* Main.storyboard */; };
 		A147A9E31D7427C900189D38 /* WorkCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9E21D7427C900189D38 /* WorkCircleCell.m */; };
 		A147A9E61D742AE500189D38 /* YWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A147A9E51D742AE500189D38 /* YWTextView.m */; };
+		A161DC431D77DCB200CF33F2 /* WCFileShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A161DC421D77DCB200CF33F2 /* WCFileShowView.m */; };
+		A161DC491D78285400CF33F2 /* YWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A161DC481D78285400CF33F2 /* YWModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		428D50CA63CC87A0B4117D7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5D95E7D8A621E893B777C9AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A110833F1D76AFCB009A7D97 /* Left Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Left Filled-50.png"; sourceTree = "<group>"; };
 		A11083401D76AFCB009A7D97 /* Right Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Right Filled-50.png"; sourceTree = "<group>"; };
 		A11083481D76B6F5009A7D97 /* WCPictureShowWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPictureShowWindowController.h; sourceTree = "<group>"; };
@@ -74,6 +79,11 @@
 		A147A9E21D7427C900189D38 /* WorkCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkCircleCell.m; sourceTree = "<group>"; };
 		A147A9E41D742AE500189D38 /* YWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWTextView.h; sourceTree = "<group>"; };
 		A147A9E51D742AE500189D38 /* YWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWTextView.m; sourceTree = "<group>"; };
+		A161DC411D77DCB200CF33F2 /* WCFileShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCFileShowView.h; sourceTree = "<group>"; };
+		A161DC421D77DCB200CF33F2 /* WCFileShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCFileShowView.m; sourceTree = "<group>"; };
+		A161DC471D78285400CF33F2 /* YWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWModel.h; sourceTree = "<group>"; };
+		A161DC481D78285400CF33F2 /* YWModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWModel.m; sourceTree = "<group>"; };
+		B61CD724C42464969A252E54 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012CDB0E87D91CB3EB4240FD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +149,8 @@
 			children = (
 				A147A9BD1D73DF2900189D38 /* Mac_WorkCircle */,
 				A147A9BC1D73DF2900189D38 /* Products */,
+				B3F8DDBA5C15DBFF03B01AE2 /* Pods */,
+				B4C019D41F017CEE21A7ECF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +174,10 @@
 				A147A9E21D7427C900189D38 /* WorkCircleCell.m */,
 				A147A9E41D742AE500189D38 /* YWTextView.h */,
 				A147A9E51D742AE500189D38 /* YWTextView.m */,
+				A161DC411D77DCB200CF33F2 /* WCFileShowView.h */,
+				A161DC421D77DCB200CF33F2 /* WCFileShowView.m */,
+				A161DC471D78285400CF33F2 /* YWModel.h */,
+				A161DC481D78285400CF33F2 /* YWModel.m */,
 				A11857BF1D759F2A001D0BC7 /* PictureCycle */,
 				A11857AF1D759EEF001D0BC7 /* AutolayoutImageView */,
 				A147A9C71D73DF2900189D38 /* Assets.xcassets */,
@@ -179,6 +196,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B3F8DDBA5C15DBFF03B01AE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B61CD724C42464969A252E54 /* Pods.debug.xcconfig */,
+				428D50CA63CC87A0B4117D7B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B4C019D41F017CEE21A7ECF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D95E7D8A621E893B777C9AB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A147A9CF1D73DF2900189D38 /* Build configuration list for PBXNativeTarget "Mac_WorkCircle" */;
 			buildPhases = (
+				BD245FDF395FF0A9BABF6ABE /* Check Pods Manifest.lock */,
 				A147A9B71D73DF2900189D38 /* Sources */,
 				A147A9B81D73DF2900189D38 /* Frameworks */,
 				A147A9B91D73DF2900189D38 /* Resources */,
+				CE3A8CC7C8D5710AF92B66AF /* Embed Pods Frameworks */,
+				F9A61495DF98CDEC64C6DBA3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,12 +293,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BD245FDF395FF0A9BABF6ABE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE3A8CC7C8D5710AF92B66AF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A61495DF98CDEC64C6DBA3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A147A9B71D73DF2900189D38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A147A9E31D7427C900189D38 /* WorkCircleCell.m in Sources */,
+				A161DC431D77DCB200CF33F2 /* WCFileShowView.m in Sources */,
 				A147A9C61D73DF2900189D38 /* ViewController.m in Sources */,
 				A11857BB1D759F04001D0BC7 /* AutolayoutImageView.m in Sources */,
 				A147A9C31D73DF2900189D38 /* main.m in Sources */,
@@ -270,6 +356,7 @@
 				A11857BE1D759F04001D0BC7 /* TapedImageView.m in Sources */,
 				A147A9E61D742AE500189D38 /* YWTextView.m in Sources */,
 				A11857BA1D759F04001D0BC7 /* AutoGroupCellImageView.m in Sources */,
+				A161DC491D78285400CF33F2 /* YWModel.m in Sources */,
 				A11857BD1D759F04001D0BC7 /* NSView+AutoCategory.m in Sources */,
 				A11857BC1D759F04001D0BC7 /* AutoReminderView.m in Sources */,
 			);
@@ -370,6 +457,7 @@
 		};
 		A147A9D01D73DF2900189D38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B61CD724C42464969A252E54 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -382,6 +470,7 @@
 		};
 		A147A9D11D73DF2900189D38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428D50CA63CC87A0B4117D7B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

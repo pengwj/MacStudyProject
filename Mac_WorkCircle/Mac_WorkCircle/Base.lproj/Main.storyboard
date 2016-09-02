@@ -672,33 +672,62 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="660"/>
+                        <rect key="frame" x="0.0" y="0.0" width="337" height="660"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3O-79-10A">
-                                <rect key="frame" x="0.0" y="560" width="340" height="100"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="photo" id="x7f-fc-Y6k"/>
-                            </imageView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvR-5e-d7r">
-                                <rect key="frame" x="253" y="574" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="发布" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lgk-pm-OYi">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-pH-xCN">
-                                <rect key="frame" x="157" y="574" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="主页" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Xb-4C-xvW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9pJ-4o-PDU">
+                                <rect key="frame" x="0.0" y="560" width="337" height="100"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vX-NX-1du">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="100"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="7.jpg" id="yNN-SD-UGb"/>
+                                    </imageView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nvR-5e-d7r">
+                                        <rect key="frame" x="264" y="13" width="66" height="32"/>
+                                        <buttonCell key="cell" type="push" title="发布" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lgk-pm-OYi">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="sendWorkCircleBtnDown:" target="XfG-lQ-9wD" id="egD-wW-Q1R"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-pH-xCN">
+                                        <rect key="frame" x="184" y="13" width="66" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="kfH-lZ-9s3"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="主页" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Xb-4C-xvW">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showWorkCircleBtnDown:" target="XfG-lQ-9wD" id="xyH-bO-28w"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pa2-pH-xCN" firstAttribute="baseline" secondItem="nvR-5e-d7r" secondAttribute="baseline" id="FcD-DG-UBM"/>
+                                    <constraint firstAttribute="bottom" secondItem="pa2-pH-xCN" secondAttribute="bottom" constant="20" symbolic="YES" id="HjT-Ep-XE0"/>
+                                    <constraint firstItem="nvR-5e-d7r" firstAttribute="leading" secondItem="pa2-pH-xCN" secondAttribute="trailing" constant="26" id="J5C-wF-aAI"/>
+                                    <constraint firstAttribute="trailing" secondItem="pa2-pH-xCN" secondAttribute="trailing" constant="93" id="JF5-ig-iHn"/>
+                                </constraints>
+                            </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9pJ-4o-PDU" secondAttribute="bottom" constant="560" id="AlA-EC-sMx"/>
+                            <constraint firstItem="9pJ-4o-PDU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="YwT-62-Cgt"/>
+                            <constraint firstAttribute="trailing" secondItem="9pJ-4o-PDU" secondAttribute="trailing" id="bb0-Lk-msR"/>
+                            <constraint firstItem="9pJ-4o-PDU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="vrE-AZ-wtr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="417"/>
+            <point key="canvasLocation" x="431.5" y="416"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="7.jpg" width="128" height="128"/>
+    </resources>
 </document>

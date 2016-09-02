@@ -61,10 +61,15 @@ blue:b/255.0 alpha:a]
     }
     return self;
 }
-- (void)layout
+
+- (void)layoutPhoto
 {
-    for (NSView *temp in self.subviews) {
-        [temp removeFromSuperview];
+    while (self.subviews.count) {
+        
+        NSView* child = self.subviews.lastObject;
+        
+        [child removeFromSuperview];
+        
     }
     
     for (int i = 0 ; i < _images.count; i++)
@@ -111,6 +116,7 @@ blue:b/255.0 alpha:a]
     if (_images.count > 0) {
         [_images removeAllObjects];
     }
+    
     if (_images == nil ) {
         _images = [NSMutableArray arrayWithCapacity:_limitImages];
     }
@@ -135,7 +141,7 @@ blue:b/255.0 alpha:a]
         //若图片数组超过限制数量，截取限制数量显示
         _images = [NSMutableArray arrayWithArray:[images subarrayWithRange:NSMakeRange(0, _limitImages)]];
     }
-    [self layout];
+    [self layoutPhoto];
 }
 
 

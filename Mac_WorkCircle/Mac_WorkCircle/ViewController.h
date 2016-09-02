@@ -15,8 +15,7 @@
 @interface ViewController : NSViewController
 
 @property (nonatomic, strong) AutolayoutImageView *autoLayoutImageView;
-@property (nonatomic, strong) AutoGroupCellImageView *autoGroupCellImageView;
-@property (nonatomic, strong) AutoReminderView *autoReminderView;
+@property (nonatomic, strong) NSTableView *workTableView;
 
 @end
 

@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "WCPictureShowWindowController.h"
+#import "WorkCircleCell.h"
+#import "YWModel.h"
 
-@interface ViewController (){
-    NSArray *items;
+@interface ViewController ()<NSTableViewDelegate,NSTableViewDataSource>{
+    NSMutableArray *items;
 }
 @end
 
@@ -19,13 +21,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self addGroupViews];
+    [self makeBaseUI];
     
+//    [self addGroupViews];    
 
-//    items = @[@{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip",@"生日照片2.zip",@"生日照片3.zip",@"生日照片4.zip"]},
-//              @{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip",@"生日照片2.zip",@"生日照片3.zip",@"生日照片4.zip"]},
-//              @{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip",@"生日照片2.zip",@"生日照片3.zip",@"生日照片4.zip"]},
-//              @{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip",@"生日照片2.zip",@"生日照片3.zip",@"生日照片4.zip"]}];
+    items = [NSMutableArray arrayWithCapacity:0];
+    
+    NSArray *array = @[@{@"image":@"1",@"name":@"陈帅",@"forwardText":@"",@"originalText":@"祝尘帅生日快乐永远18岁-祝尘帅生日快乐永远18岁-祝尘帅生日快乐永远18岁-祝尘帅生日快乐永远18岁-祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[]},
+              @{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip",@"生日照片2.zip",@"生日照片3.zip",@"生日照片4.zip"]},
+              @{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀-哈哈哈哈，开心呀-哈哈哈哈，开心呀-哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip"]},
+              @{@"image":@"1",@"name":@"陈帅",@"forwardText":@"哈哈哈哈，开心呀",@"originalText":@"祝尘帅生日快乐永远18岁-祝尘帅生日快乐永远18岁-祝尘帅生日快乐永远18岁",@"imageArray":@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],@"fileArray":@[@"生日照片1.zip",@"生日照片2.zip",@"生日照片3.zip"]}];
+    
+    for (NSDictionary *temp in array) {
+        YWModel *model = [[YWModel alloc] init];
+        model.image = temp[@"image"];
+        model.name = temp[@"name"];
+        model.forwardText = temp[@"forwardText"];
+        model.originalText = temp[@"originalText"];
+        model.imageArray = temp[@"imageArray"];
+        model.fileArray = temp[@"fileArray"];
+        [items addObject:model];
+    }
+    
+    [self.workTableView reloadData];
+    
+    NSLog(@"items:%ld",items.count);
     
     // Do any additional setup after loading the view.
 }
@@ -36,112 +56,71 @@
     // Update the view, if already loaded.
 }
 
-//#pragma mark - delegate
-//- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
-//{
-//    return items.count;
-//}
-//
-//- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-//{
-//    static NSString *NODE_CELL_ID = @"AtTableCellViewID";
-//    NSTableCellView *cell = [tableView makeViewWithIdentifier:NODE_CELL_ID owner:self];
-//    if (!cell) {
-//        cell = [[NSTableCellView alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-//        cell.identifier = NODE_CELL_ID;
-//    }
-//    
-//    
-//    return cell;
-//}
-//
-//- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
-//{
-//    return 20;
-//}
-//
-//- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
-//{
-//    return YES;
-//}
+// 主页
+- (IBAction)showWorkCircleBtnDown:(id)sender {
+    
+}
 
-- (void)addGroupViews{
-    //九宫格图片VIew
-    self.autoLayoutImageView = [[AutolayoutImageView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
-    [self.view addSubview:self.autoLayoutImageView];
-    
-    self.autoLayoutImageView.backgroundColor = [NSColor whiteColor];
-    CGFloat itemWidth = (self.autoLayoutImageView.width - 4 * 10) / 3;
-    self.autoLayoutImageView.itemSize = CGSizeMake(itemWidth, itemWidth);
-    self.autoLayoutImageView.lineSpace = 10;
-    self.autoLayoutImageView.colSpace = 10;
-    self.autoLayoutImageView.numberOfLine =3;
-    self.autoLayoutImageView.showAddButton = NO;
-    
-    __weak  typeof(self) weakSelf = self;
-    self.autoLayoutImageView.addBlock = ^(){ //点击添加按钮
+// 发布工作圈
+- (IBAction)sendWorkCircleBtnDown:(id)sender {
 
-    };
-    
-    self.autoLayoutImageView.imageTapBlock = ^(NSArray *images , NSUInteger index)//点击了图片
-    {
-        [[WCPictureShowWindowController sharedInstancePictures:images index:index] showWindow:weakSelf];
+}
 
-    };
+- (void)makeBaseUI
+{
+    // create a table view and a scroll view
+    NSScrollView * tableContainer = [[NSScrollView alloc] initWithFrame:NSMakeRect(0, 0, 340, 560)];
+    self.workTableView = [[NSTableView alloc] initWithFrame:NSMakeRect(0, 100, 340, 560)];
+    self.workTableView.delegate = self;
+    self.workTableView.dataSource = self;
+    [self.view addSubview:self.workTableView];
+
+    // create columns for our table
+    NSTableColumn * column1 = [[NSTableColumn alloc] initWithIdentifier:@"WorkCircleColum"];
+    [column1 setWidth:340];
+    // generally you want to add at least one column to the table view.
+    [self.workTableView addTableColumn:column1];
+    self.workTableView.headerView.hidden = YES;
+    [self.workTableView setDelegate:self];
+    [self.workTableView setDataSource:self];
+    //  [memberTableView setHidden:YES];
+    [self.workTableView reloadData];
+    // embed the table view in the scroll view, and add the scroll view to our window.
+    [tableContainer setDocumentView:self.workTableView];
+    [tableContainer setHasVerticalScroller:YES];
+    [self.view addSubview:tableContainer];
     
-    NSMutableArray *mutArray = [NSMutableArray arrayWithCapacity:0];
-    for (int i=0; i<8; i++) {
-        [mutArray addObject:[NSImage imageNamed:[NSString stringWithFormat:@"%i.jpg",i+1]]];
+    tableContainer.autoresizingMask =  NSViewMinXMargin|NSViewMinYMargin|NSViewHeightSizable;
+}
+
+#pragma mark - delegate
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return items.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    static NSString *NODE_CELL_ID = @"WorkCircleCellID";
+    WorkCircleCell *cell = [tableView makeViewWithIdentifier:NODE_CELL_ID owner:self];
+    if (!cell) {
+        cell = [[WorkCircleCell alloc] initWithFrame:CGRectMake(0, 0, 330, 330)];
+        cell.identifier = NODE_CELL_ID;
     }
     
-    [self.autoLayoutImageView setImages:mutArray];
+    [cell configWithModel:items[row]];
     
-    
-//    //九宫格图片VIew AutoGroupCellImageView
-//    self.autoGroupCellImageView = [[AutoGroupCellImageView alloc] initWithFrame:CGRectMake(0, 500, 400, 400)];
-//    [self.view addSubview:self.autoGroupCellImageView];
-//    
-//    self.autoGroupCellImageView.backgroundColor = [NSColor whiteColor];
-//    CGFloat itemWidth2 = (self.autoLayoutImageView.width - 4 * 10) / 3;
-//    self.autoGroupCellImageView.itemSize = CGSizeMake(itemWidth2, itemWidth2);
-//    self.autoGroupCellImageView.lineSpace = 10;
-//    self.autoGroupCellImageView.colSpace = 10;
-//    self.autoGroupCellImageView.numberOfLine =3;
-//    self.autoGroupCellImageView.showAddButton = NO;
-//    
-//    self.autoGroupCellImageView.addBlock = ^(){ //点击添加按钮
-//
-//    };
-//    
-//    self.autoGroupCellImageView.imageTapBlock = ^(NSArray *images , NSUInteger index)//点击了图片
-//    {
-//        NSLog(@"autoGroupCellImageView_count:%ld",index);
-//    };
-//    
-//    [self.autoGroupCellImageView setImageUrls:mutArray];
-//    
-//    //九宫格图片VIew AutoReminderView
-//    self.autoReminderView = [[AutoReminderView alloc] initWithFrame:CGRectMake(500, 0, 400, 400)];
-//    [self.view addSubview:self.autoReminderView];
-//    
-//    self.autoReminderView.backgroundColor = [NSColor whiteColor];
-//    CGFloat itemWidth3 = (self.autoReminderView.width - 4 * 10) / 3;
-//    self.autoReminderView.itemSize = CGSizeMake(itemWidth3, itemWidth3);
-//    self.autoReminderView.lineSpace = 10;
-//    self.autoReminderView.colSpace = 10;
-//    self.autoReminderView.numberOfLine =3;
-//    self.autoReminderView.showAddButton = NO;
-//    
-//    self.autoReminderView.addBlock = ^(){ //点击添加按钮
-//        
-//    };
-//    
-//    self.autoReminderView.imageTapBlock = ^(NSArray *images , NSUInteger index)//点击了图片
-//    {
-//        NSLog(@"autoReminderView_count:%ld",index);
-//    };
-//    
-//    [self.autoReminderView setImages:mutArray];
+    return cell;
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return [[WorkCircleCell alloc] getCellHeightWithModel:items[row]];
+}
+
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
+{
+    return NO;
 }
 
 @end

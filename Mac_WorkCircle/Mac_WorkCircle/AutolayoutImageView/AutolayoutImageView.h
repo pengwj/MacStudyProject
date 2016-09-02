@@ -61,7 +61,7 @@ typedef void(^addImageBlock)();
 
 @property (nonatomic, strong) NSColor *backgroundColor;
 
-- (void)layout;
+- (void)layoutPhoto;
 
 - (void)tapedImage:(NSArray *)images atIndex:(NSUInteger)index;
 
