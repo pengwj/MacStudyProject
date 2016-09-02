@@ -11,3 +11,9 @@
 ####3、Mac_WorkCircle(工作圈)
 ######该demo是仿照朋友圈，实现了图片查看器、动态计算cell高度
 ![image](https://github.com/pengwj/MacStudyProject/blob/master/Mac_WorkCircle/WorkCircle.gif) 
+
+####4、Mac_NSScrollView
+######纯代码写NSScrollView
+
+####5、Mac_NSTextView
+######计算含有富文本的NSTextView的高度（后来发现没这么复杂，可以使用它自带的方法计算，我这里是因为自定义表情是gif格式的，无法设置size，才只能出此下策）
