@@ -7,3 +7,7 @@
 
 ####2、Mac_NSTextView(NSScrollView)
 ######该demo是用来手写NSTextView（放在NSScrollView中），这么写是因为在封装cell中，用Masonry布局时，提示NSTextView为弱引用，后来发现需要把它放在NSScrollView中才能引用
+
+####3、Mac_WorkCircle(工作圈)
+######该demo是仿照朋友圈，实现了图片查看器、动态计算cell高度
+![image](https://github.com/pengwj/MacStudyProject/blob/master/Mac_WorkCircle/WorkCircle.gif) 
