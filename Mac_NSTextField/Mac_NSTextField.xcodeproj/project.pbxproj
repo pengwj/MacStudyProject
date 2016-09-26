@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1F02FD71D99148F001D23BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F02FD61D99148F001D23BA /* AppDelegate.m */; };
+		A1F02FDA1D99148F001D23BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F02FD91D99148F001D23BA /* main.m */; };
+		A1F02FDD1D99148F001D23BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F02FDC1D99148F001D23BA /* ViewController.m */; };
+		A1F02FDF1D99148F001D23BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F02FDE1D99148F001D23BA /* Assets.xcassets */; };
+		A1F02FE21D991490001D23BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F02FE01D991490001D23BA /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1F02FD21D99148F001D23BA /* Mac_NSTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mac_NSTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F02FD51D99148F001D23BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1F02FD61D99148F001D23BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1F02FD91D99148F001D23BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1F02FDB1D99148F001D23BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A1F02FDC1D99148F001D23BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A1F02FDE1D99148F001D23BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1F02FE11D991490001D23BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1F02FE31D991490001D23BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1F02FCF1D99148F001D23BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1F02FC91D99148F001D23BA = {
+			isa = PBXGroup;
+			children = (
+				A1F02FD41D99148F001D23BA /* Mac_NSTextField */,
+				A1F02FD31D99148F001D23BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1F02FD31D99148F001D23BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1F02FD21D99148F001D23BA /* Mac_NSTextField.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1F02FD41D99148F001D23BA /* Mac_NSTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A1F02FD51D99148F001D23BA /* AppDelegate.h */,
+				A1F02FD61D99148F001D23BA /* AppDelegate.m */,
+				A1F02FDB1D99148F001D23BA /* ViewController.h */,
+				A1F02FDC1D99148F001D23BA /* ViewController.m */,
+				A1F02FDE1D99148F001D23BA /* Assets.xcassets */,
+				A1F02FE01D991490001D23BA /* Main.storyboard */,
+				A1F02FE31D991490001D23BA /* Info.plist */,
+				A1F02FD81D99148F001D23BA /* Supporting Files */,
+			);
+			path = Mac_NSTextField;
+			sourceTree = "<group>";
+		};
+		A1F02FD81D99148F001D23BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1F02FD91D99148F001D23BA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1F02FD11D99148F001D23BA /* Mac_NSTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F02FE61D991490001D23BA /* Build configuration list for PBXNativeTarget "Mac_NSTextField" */;
+			buildPhases = (
+				A1F02FCE1D99148F001D23BA /* Sources */,
+				A1F02FCF1D99148F001D23BA /* Frameworks */,
+				A1F02FD01D99148F001D23BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mac_NSTextField;
+			productName = Mac_NSTextField;
+			productReference = A1F02FD21D99148F001D23BA /* Mac_NSTextField.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1F02FCA1D99148F001D23BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = pengwenjie;
+				TargetAttributes = {
+					A1F02FD11D99148F001D23BA = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A1F02FCD1D99148F001D23BA /* Build configuration list for PBXProject "Mac_NSTextField" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1F02FC91D99148F001D23BA;
+			productRefGroup = A1F02FD31D99148F001D23BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1F02FD11D99148F001D23BA /* Mac_NSTextField */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1F02FD01D99148F001D23BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F02FDF1D99148F001D23BA /* Assets.xcassets in Resources */,
+				A1F02FE21D991490001D23BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1F02FCE1D99148F001D23BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F02FDD1D99148F001D23BA /* ViewController.m in Sources */,
+				A1F02FDA1D99148F001D23BA /* main.m in Sources */,
+				A1F02FD71D99148F001D23BA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A1F02FE01D991490001D23BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1F02FE11D991490001D23BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1F02FE41D991490001D23BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A1F02FE51D991490001D23BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A1F02FE71D991490001D23BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Mac_NSTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "s.Mac-NSTextField";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A1F02FE81D991490001D23BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Mac_NSTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "s.Mac-NSTextField";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1F02FCD1D99148F001D23BA /* Build configuration list for PBXProject "Mac_NSTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F02FE41D991490001D23BA /* Debug */,
+				A1F02FE51D991490001D23BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1F02FE61D991490001D23BA /* Build configuration list for PBXNativeTarget "Mac_NSTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F02FE71D991490001D23BA /* Debug */,
+				A1F02FE81D991490001D23BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1F02FCA1D99148F001D23BA /* Project object */;
+}
