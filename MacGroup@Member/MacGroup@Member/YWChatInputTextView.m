@@ -390,7 +390,7 @@
 - (void)closeAtPopover
 {
     [_atPopover close];
-    _lastAtLocation = -1;
+//    _lastAtLocation = -1;
 }
 
 @end

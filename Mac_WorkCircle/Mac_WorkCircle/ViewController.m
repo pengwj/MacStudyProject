@@ -45,8 +45,6 @@
     
     [self.workTableView reloadData];
     
-    NSLog(@"items:%ld",items.count);
-    
     // Do any additional setup after loading the view.
 }
 

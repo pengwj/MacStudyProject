@@ -17,3 +17,6 @@
 
 ####5、Mac_NSTextView
 ######计算含有富文本的NSTextView的高度（后来发现没这么复杂，可以使用它自带的方法计算，我这里是因为自定义表情是gif格式的，无法设置size，才只能出此下策）
+
+####6、Mac_NSTextField
+######用代码修改NSTextField的边框颜色

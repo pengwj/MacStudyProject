@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A19043F71DF8ED3B0000DCA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19043F61DF8ED3B0000DCA6 /* AppDelegate.m */; };
+		A19043FA1DF8ED3B0000DCA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19043F91DF8ED3B0000DCA6 /* main.m */; };
+		A19043FD1DF8ED3B0000DCA6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19043FC1DF8ED3B0000DCA6 /* ViewController.m */; };
+		A19043FF1DF8ED3B0000DCA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19043FE1DF8ED3B0000DCA6 /* Assets.xcassets */; };
+		A19044021DF8ED3B0000DCA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19044001DF8ED3B0000DCA6 /* Main.storyboard */; };
+		A190440B1DF8EE040000DCA6 /* DKBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A190440A1DF8EE040000DCA6 /* DKBorderButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A19043F21DF8ED3B0000DCA6 /* Mac_ButtonBorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mac_ButtonBorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19043F51DF8ED3B0000DCA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A19043F61DF8ED3B0000DCA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A19043F91DF8ED3B0000DCA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A19043FB1DF8ED3B0000DCA6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A19043FC1DF8ED3B0000DCA6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A19043FE1DF8ED3B0000DCA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A19044011DF8ED3B0000DCA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A19044031DF8ED3B0000DCA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19044091DF8EE040000DCA6 /* DKBorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBorderButton.h; sourceTree = "<group>"; };
+		A190440A1DF8EE040000DCA6 /* DKBorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBorderButton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A19043EF1DF8ED3B0000DCA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A19043E91DF8ED3B0000DCA6 = {
+			isa = PBXGroup;
+			children = (
+				A19043F41DF8ED3B0000DCA6 /* Mac_ButtonBorder */,
+				A19043F31DF8ED3B0000DCA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A19043F31DF8ED3B0000DCA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A19043F21DF8ED3B0000DCA6 /* Mac_ButtonBorder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A19043F41DF8ED3B0000DCA6 /* Mac_ButtonBorder */ = {
+			isa = PBXGroup;
+			children = (
+				A19043F51DF8ED3B0000DCA6 /* AppDelegate.h */,
+				A19043F61DF8ED3B0000DCA6 /* AppDelegate.m */,
+				A19043FB1DF8ED3B0000DCA6 /* ViewController.h */,
+				A19043FC1DF8ED3B0000DCA6 /* ViewController.m */,
+				A19043FE1DF8ED3B0000DCA6 /* Assets.xcassets */,
+				A19044091DF8EE040000DCA6 /* DKBorderButton.h */,
+				A190440A1DF8EE040000DCA6 /* DKBorderButton.m */,
+				A19044001DF8ED3B0000DCA6 /* Main.storyboard */,
+				A19044031DF8ED3B0000DCA6 /* Info.plist */,
+				A19043F81DF8ED3B0000DCA6 /* Supporting Files */,
+			);
+			path = Mac_ButtonBorder;
+			sourceTree = "<group>";
+		};
+		A19043F81DF8ED3B0000DCA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A19043F91DF8ED3B0000DCA6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A19043F11DF8ED3B0000DCA6 /* Mac_ButtonBorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A19044061DF8ED3B0000DCA6 /* Build configuration list for PBXNativeTarget "Mac_ButtonBorder" */;
+			buildPhases = (
+				A19043EE1DF8ED3B0000DCA6 /* Sources */,
+				A19043EF1DF8ED3B0000DCA6 /* Frameworks */,
+				A19043F01DF8ED3B0000DCA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mac_ButtonBorder;
+			productName = Mac_ButtonBorder;
+			productReference = A19043F21DF8ED3B0000DCA6 /* Mac_ButtonBorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A19043EA1DF8ED3B0000DCA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = pengwenjie;
+				TargetAttributes = {
+					A19043F11DF8ED3B0000DCA6 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A19043ED1DF8ED3B0000DCA6 /* Build configuration list for PBXProject "Mac_ButtonBorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A19043E91DF8ED3B0000DCA6;
+			productRefGroup = A19043F31DF8ED3B0000DCA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A19043F11DF8ED3B0000DCA6 /* Mac_ButtonBorder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A19043F01DF8ED3B0000DCA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19043FF1DF8ED3B0000DCA6 /* Assets.xcassets in Resources */,
+				A19044021DF8ED3B0000DCA6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A19043EE1DF8ED3B0000DCA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A190440B1DF8EE040000DCA6 /* DKBorderButton.m in Sources */,
+				A19043FD1DF8ED3B0000DCA6 /* ViewController.m in Sources */,
+				A19043FA1DF8ED3B0000DCA6 /* main.m in Sources */,
+				A19043F71DF8ED3B0000DCA6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A19044001DF8ED3B0000DCA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A19044011DF8ED3B0000DCA6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A19044041DF8ED3B0000DCA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A19044051DF8ED3B0000DCA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A19044071DF8ED3B0000DCA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Mac_ButtonBorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.test.Mac-ButtonBorder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A19044081DF8ED3B0000DCA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Mac_ButtonBorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.test.Mac-ButtonBorder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A19043ED1DF8ED3B0000DCA6 /* Build configuration list for PBXProject "Mac_ButtonBorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A19044041DF8ED3B0000DCA6 /* Debug */,
+				A19044051DF8ED3B0000DCA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A19044061DF8ED3B0000DCA6 /* Build configuration list for PBXNativeTarget "Mac_ButtonBorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A19044071DF8ED3B0000DCA6 /* Debug */,
+				A19044081DF8ED3B0000DCA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A19043EA1DF8ED3B0000DCA6 /* Project object */;
+}

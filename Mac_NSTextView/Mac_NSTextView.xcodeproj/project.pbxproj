@@ -125,6 +125,7 @@
 		A1089FDD1D701408000BC9B0 /* zhuai.png in Resources */ = {isa = PBXBuildFile; fileRef = A1089F781D701408000BC9B0 /* zhuai.png */; };
 		A1089FDE1D701408000BC9B0 /* zhuakuang.png in Resources */ = {isa = PBXBuildFile; fileRef = A1089F791D701408000BC9B0 /* zhuakuang.png */; };
 		A1089FDF1D701408000BC9B0 /* zuoheng.png in Resources */ = {isa = PBXBuildFile; fileRef = A1089F7A1D701408000BC9B0 /* zuoheng.png */; };
+		A15A6A601D83F1AB007AAD69 /* 795058.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A15A6A5F1D83F1AB007AAD69 /* 795058.jpg */; };
 		A163FA431D62F32B00496D4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A163FA421D62F32B00496D4B /* AppDelegate.m */; };
 		A163FA461D62F32B00496D4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A163FA451D62F32B00496D4B /* main.m */; };
 		A163FA491D62F32B00496D4B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A163FA481D62F32B00496D4B /* ViewController.m */; };
@@ -268,6 +269,7 @@
 		A1089F781D701408000BC9B0 /* zhuai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhuai.png; sourceTree = "<group>"; };
 		A1089F791D701408000BC9B0 /* zhuakuang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhuakuang.png; sourceTree = "<group>"; };
 		A1089F7A1D701408000BC9B0 /* zuoheng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zuoheng.png; sourceTree = "<group>"; };
+		A15A6A5F1D83F1AB007AAD69 /* 795058.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 795058.jpg; sourceTree = "<group>"; };
 		A163FA3E1D62F32B00496D4B /* Mac_NSTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mac_NSTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A163FA411D62F32B00496D4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A163FA421D62F32B00496D4B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 		A163FA401D62F32B00496D4B /* Mac_NSTextView */ = {
 			isa = PBXGroup;
 			children = (
+				A15A6A5F1D83F1AB007AAD69 /* 795058.jpg */,
 				A1089F141D701408000BC9B0 /* gif表情 */,
 				A1089F471D701408000BC9B0 /* png表情 */,
 				A163FA411D62F32B00496D4B /* AppDelegate.h */,
@@ -653,6 +656,7 @@
 				A1089FD21D701408000BC9B0 /* weiqu.png in Resources */,
 				A1089FCD1D701408000BC9B0 /* shuai.png in Resources */,
 				A1089F8A1D701408000BC9B0 /* hanyan1.gif in Resources */,
+				A15A6A601D83F1AB007AAD69 /* 795058.jpg in Resources */,
 				A1089FC91D701408000BC9B0 /* ok.png in Resources */,
 				A1089F9D1D701408000BC9B0 /* touxiao1.gif in Resources */,
 				A1089FB51D701408000BC9B0 /* fadai.png in Resources */,

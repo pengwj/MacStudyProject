@@ -38,7 +38,8 @@
     
     ReAttribute *attribut = [[ReAttribute alloc] init];
     //调用检测富文本方法
-    NSAttributedString *attributText = [[NSAttributedString alloc] initWithAttributedString:[attribut attributedFontStringWithText:tempStr.string]];
+//    NSAttributedString *attributText = [[NSAttributedString alloc] initWithAttributedString:[attribut attributedFontStringWithText:tempStr.string]];
+    NSAttributedString *attributText = [[NSAttributedString alloc] initWithAttributedString:[attribut createAttributedText:tempStr.string]];
     
     CGFloat maxWidth = 300;
     
@@ -59,7 +60,6 @@
     [[tempTextView textContainer]setContainerSize:NSMakeSize(maxWidth, 0)];
     //    // textContainer
     [[tempTextView textStorage] insertAttributedString:attributText atIndex: tempTextView.attributedString.length];
-//    [[tempTextView textStorage] setFont:[NSFont systemFontOfSize:15]];
     
     // addSubview要放在赋值后
     [self.view addSubview:tempTextView];
@@ -77,7 +77,46 @@
 - (IBAction)firstBtnDown:(id)sender {
     
     [tempTextView removeFromSuperview];
-    [self sizeWithText:[[NSAttributedString alloc] initWithString:@"123789😉😉😉😉😉1234456789😉9"]];
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"123789😉😉😉😉😉1234456789😉9"];
+    
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = [NSImage imageNamed:@"795058.jpg"];
+    attachment.bounds = CGRectMake(0, 0, 400, 400);
+    NSAttributedString *imageText = [NSAttributedString attributedStringWithAttachment:attachment];
+    [text appendAttributedString:imageText];
+    
+    NSMutableAttributedString *text2 = [[NSMutableAttributedString alloc] initWithString:@"123789😉😉😉😉😉1234456789😉9"];
+
+    [text appendAttributedString:text2];
+    
+    NSLog(@"text:%@",text);
+    
+//    [self sizeWithText:text];
+    
+    CGFloat maxWidth = 300;
+    
+    tempTextView = [[NSTextView alloc] initWithFrame:NSMakeRect(100, 200, maxWidth, 0)];
+    tempTextView.editable = NO;
+    [[tempTextView textStorage] setFont:[NSFont systemFontOfSize:15]];
+    tempTextView.backgroundColor = [NSColor redColor];
+    tempTextView.string = @"";
+    [tempTextView setHorizontallyResizable:NO];
+    [tempTextView setVerticallyResizable:YES];
+    [tempTextView setAutoresizingMask:NSViewHeightSizable];
+    [[tempTextView textContainer]setWidthTracksTextView:NO];
+    [[tempTextView textContainer]setHeightTracksTextView:YES];
+    
+    //    NSSize tempSize = NSMakeSize(maxWidth, height);
+    tempTextView.maxSize = NSMakeSize(maxWidth, MAXFLOAT);
+    tempTextView.minSize = NSMakeSize(maxWidth, 0);
+    [[tempTextView textContainer]setContainerSize:NSMakeSize(maxWidth, 0)];
+    //    // textContainer
+//    [[tempTextView textStorage] insertAttributedString:text atIndex: tempTextView.attributedString.length];
+
+    [tempTextView insertText:text replacementRange:NSMakeRange(tempTextView.selectedRange.location, 0)];
+    
+    [self.view addSubview:tempTextView];
 
 }
 

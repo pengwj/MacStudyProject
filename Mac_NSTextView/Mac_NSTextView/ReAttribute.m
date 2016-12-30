@@ -58,57 +58,11 @@
             NSLog(@"emotion->:%@",emotion);
             // 传递表情
             attach.emotion = emotion;
-            /*
-             NSImage *image1 = [[NSImage alloc] initWithContentsOfFile:path];
-             [image1 setSize:NSMakeSize(24, 24)];
-             NSTextAttachmentCell *attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:image1];
-             NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
-             [attachment setAttachmentCell: attachmentCell ];
-             NSAttributedString *attributedString = [NSAttributedString  attributedStringWithAttachment: attachment];
-             */
-            // NSLog(@"image = %@",attach.image);
-            /*
-             NSFileWrapper *imageFileWrapper = [[NSFileWrapper alloc] initRegularFileWithContents:[[NSImage imageNamed:imageName] TIFFRepresentation]];
-             imageFileWrapper.filename = imageName;
-             imageFileWrapper.preferredFilename = imageName;
-             
-             NSTextAttachment *imageAttachment = [[NSTextAttachment alloc] initWithFileWrapper:imageFileWrapper];
-             
-             */
-//                        NSFileWrapper *imageFileWrapper = [[NSFileWrapper alloc] initRegularFileWithContents:[attach.image TIFFRepresentation]];
-//                        imageFileWrapper.filename = attach.image.name;
-//                        imageFileWrapper.preferredFilename = attach.directory;
-//                        attach.fileWrapper = imageFileWrapper;
-//            
-//                        NSImage *image = [[NSImage alloc] initWithContentsOfFile:attach.directory];
-//            
-//                        [image setSize:NSMakeSize(10, 10)];
-            
-//                        NSFileWrapper *imageFileWrapper = [[NSFileWrapper alloc] initRegularFileWithContents:[image TIFFRepresentation]];
-//                        imageFileWrapper.filename = image.name;
-//                        imageFileWrapper.preferredFilename =attach.directory;
-//            
-//                        NSTextAttachment *imageAttachment = [[NSTextAttachment alloc] initWithFileWrapper:imageFileWrapper];
-            
- 
-            
+    
             NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initRegularFileWithContents:[NSData dataWithContentsOfFile:attach.directory]];
             [fileWrapper setPreferredFilename:[attach.directory lastPathComponent]];
             
             NSTextAttachment *imageAttachment = [[NSTextAttachment alloc] initWithFileWrapper:fileWrapper];
-            
-            //            NSTextAttachment *imageAttachment = [[NSTextAttachment alloc]init];
-            //            NSImage *image = [[NSImage alloc] initWithContentsOfFile:attach.directory];
-            //            NSLog(@"image = %@",image);
-            //            image = attach.image;
-            //            [image setSize:NSMakeSize(12, 12)];
-            //
-            //            //NSLog(@"image1 = %@",image);
-            //              NSTextAttachmentCell *attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:image];
-            //              [imageAttachment setAttachmentCell:attachmentCell];
-            //
-            //            [imageAttachment setBounds:NSMakeRect(12, 10, 14, 14)];
-            // attach.bounds = CGRectMake(0, -3, HMStatusOrginalTextFont.xHeight, HMStatusOrginalTextFont.xHeight);
             
             // 将附件包装成富文本
             NSAttributedString *attachString = [NSAttributedString attributedStringWithAttachment:imageAttachment];
